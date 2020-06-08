@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SpeechRecognition from './components/speechRecognition';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <h1>Fala bem caminhoneiro </h1>
+        <img src="https://img.icons8.com/ios/100/FFFFFF/interstate-truck.png" alt="logo"/>
+      </div>
+      <SpeechRecognition />
     </div>
   );
 }
