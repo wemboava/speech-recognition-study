@@ -42,7 +42,7 @@ const SpeechRecognitionComponent: React.FC<PeechRecognitionData> = ({
   }, [isRecording, stopListening, startListening])
 
   if (!browserSupportsSpeechRecognition) {
-    return null;
+    return (<div>Use o Chrome!</div>);
   }
   return (
     <Container startAnimation={!!finalTranscript}>
@@ -53,7 +53,7 @@ const SpeechRecognitionComponent: React.FC<PeechRecognitionData> = ({
       
       {/* <button onClick={resetTranscript}>Reset</button> */}
       <div className="rec-text">
-        Gravação:
+        cê falô:
         <p className="line typing-animation">{finalTranscript}</p>
       </div>
     </Container>
