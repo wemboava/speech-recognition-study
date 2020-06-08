@@ -35,7 +35,7 @@ const SpeechRecognitionComponent: React.FC<PeechRecognitionData> = ({
 
     if (arrayTarget.filter(item => finalTranscript.toLocaleLowerCase().includes(item)).length > 1) {
       const lastArg = finalTranscript.split(' ');
-      window.open(`https://www.google.com/maps/search/?api=1&${lastArg[lastArg.length - 1]}`, '_blank')
+      window.open(`https://www.google.com/maps/search/${lastArg[lastArg.length - 1]}`, '_blank')
     }
 
     if (finalTranscript) {
