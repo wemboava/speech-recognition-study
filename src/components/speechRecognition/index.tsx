@@ -30,11 +30,19 @@ const SpeechRecognitionComponent: React.FC<PeechRecognitionData> = ({
   const [isRecording, setIsRecording] = useState<boolean>(false);
 
   useEffect(() => {
+    const target = 'buscar pesquisar encontre por';
+    const arrayTarget = target.split(' ');
+
+    if (arrayTarget.filter(item => finalTranscript.toLocaleLowerCase().includes(item)).length > 1) {
+      const lastArg = finalTranscript.split(' ');
+      window.open(`https://www.google.com/maps/search/?api=1&${lastArg[lastArg.length - 1]}`, '_blank')
+    }
+
     if (finalTranscript) {
       setIsRecording(false);
     }
   }, [finalTranscript])
-
+  // https://www.google.com/maps/search/hoteis
   const handlePlayOrStop = useCallback(() => {
     isRecording ? stopListening() : startListening();
 
